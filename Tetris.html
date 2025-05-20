@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>俄羅斯方塊</title>
+    <link rel="stylesheet" href="tetris-style.css">
+    <link rel="stylesheet" href="common-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="nav-bar">
+        <div class="home-link">
+            <a href="index.html">
+                <i class="fas fa-home"></i> 回到遊戲首頁
+            </a>
+        </div>
+    </div>
+    
+    <div class="container">
+        <header>
+            <h1>俄羅斯方塊</h1>
+        </header>
+        
+        <div class="game-area">
+            <div class="game-info">
+                <div class="score-box">
+                    <div class="score-label">分數</div>
+                    <div id="score">0</div>
+                </div>
+                
+                <div class="level-box">
+                    <div class="level-label">等級</div>
+                    <div id="level">1</div>
+                </div>
+                
+                <div class="lines-box">
+                    <div class="lines-label">消除行數</div>
+                    <div id="lines">0</div>
+                </div>
+                
+                <div class="next-piece-box">
+                    <div class="next-label">下一個方塊</div>
+                    <div id="next-piece-container"></div>
+                </div>
+                
+                <div class="controls">
+                    <button id="start-button">開始/暫停</button>
+                    <button id="reset-button">重新開始</button>
+                </div>
+            </div>
+            
+            <div class="game-board-container">
+                <canvas id="game-board" width="300" height="600"></canvas>
+                
+                <div id="game-over-message" class="game-message">
+                    <h2>遊戲結束</h2>
+                    <p>最終分數: <span id="final-score">0</span></p>
+                    <button id="play-again-button">再玩一次</button>
+                </div>
+                
+                <div id="pause-message" class="game-message">
+                    <h2>遊戲暫停</h2>
+                    <p>按空格鍵或點擊開始/暫停按鈕繼續</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <h3>操作說明:</h3>
+            <ul>
+                <li>← → : 左右移動方塊</li>
+                <li>↑ : 旋轉方塊</li>
+                <li>↓ : 加速下落</li>
+                <li>空格鍵 : 直接落下</li>
+                <li>P : 暫停/繼續遊戲</li>
+            </ul>
+        </div>
+        
+        <div class="mobile-controls">
+            <button id="left-button">←</button>
+            <button id="rotate-button">↑</button>
+            <button id="right-button">→</button>
+            <button id="down-button">↓</button>
+            <button id="drop-button">落下</button>
+        </div>
+    </div>
+    
+    <script src="tetris-game.js"></script>
+</body>
+</html>

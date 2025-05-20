@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048 遊戲</title>
+    <link rel="stylesheet" href="2048-style.css">
+    <link rel="stylesheet" href="common-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="nav-bar">
+        <div class="home-link">
+            <a href="index.html">
+                <i class="fas fa-home"></i> 回到遊戲首頁
+            </a>
+        </div>
+    </div>
+    
+    <div class="container">
+        <header>
+            <h1>2048</h1>
+            <div class="score-container">
+                <div class="score-box">
+                    <span class="score-label">分數</span>
+                    <span id="score">0</span>
+                </div>
+                <div class="score-box">
+                    <span class="score-label">最高分</span>
+                    <span id="best-score">0</span>
+                </div>
+            </div>
+        </header>
+        
+        <div class="game-intro">
+            <p>將數字方塊合併，創造出 <strong>2048</strong> 方塊！</p>
+            <div class="controls">
+                <button id="new-game-button">新遊戲</button>
+            </div>
+        </div>
+        
+        <div class="game-container">
+            <div class="game-message">
+                <p></p>
+                <div class="controls">
+                    <button id="retry-button">再試一次</button>
+                </div>
+            </div>
+            
+            <div class="grid-container">
+                <div class="grid-background">
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                </div>
+                
+                <div class="grid-tiles">
+                    <!-- 方塊將由 JavaScript 動態生成 -->
+                </div>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <p><strong>如何遊玩:</strong> 使用 <strong>方向鍵</strong> 或 <strong>滑動</strong> 移動方塊。當兩個相同數字的方塊相撞時，它們會合併成一個！</p>
+        </div>
+    </div>
+    
+    <script src="2048-game.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>打磚塊遊戲</title>
+    <link rel="stylesheet" href="breakout-style.css">
+    <link rel="stylesheet" href="common-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="nav-bar">
+        <div class="home-link">
+            <a href="index.html">
+                <i class="fas fa-home"></i> 回到遊戲首頁
+            </a>
+        </div>
+    </div>
+    
+    <div class="container">
+        <h1>打磚塊遊戲</h1>
+        
+        <div class="game-stats">
+            <div id="score">得分: 0</div>
+            <div id="lives">生命: 3</div>
+            <div id="level">關卡: 1</div>
+        </div>
+        
+        <div class="game-container">
+            <canvas id="gameCanvas" width="800" height="500"></canvas>
+            
+            <div id="start-screen" class="overlay">
+                <div class="overlay-content">
+                    <h2>打磚塊遊戲</h2>
+                    <p>使用滑鼠或左右方向鍵移動擋板</p>
+                    <p>打破所有磚塊進入下一關</p>
+                    <button id="start-button">開始遊戲</button>
+                </div>
+            </div>
+            
+            <div id="level-complete" class="overlay">
+                <div class="overlay-content">
+                    <h2>關卡完成！</h2>
+                    <p>得分: <span id="level-score">0</span></p>
+                    <button id="next-level-button">下一關</button>
+                </div>
+            </div>
+            
+            <div id="game-over" class="overlay">
+                <div class="overlay-content">
+                    <h2>遊戲結束</h2>
+                    <p>最終得分: <span id="final-score">0</span></p>
+                    <p>最高關卡: <span id="final-level">0</span></p>
+                    <button id="restart-button">重新開始</button>
+                </div>
+            </div>
+            
+            <div id="pause-screen" class="overlay">
+                <div class="overlay-content">
+                    <h2>遊戲暫停</h2>
+                    <p>按 P 鍵或點擊下方按鈕繼續</p>
+                    <button id="resume-button">繼續遊戲</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button id="pause-button">暫停</button>
+            <div class="difficulty">
+                <span>球速: </span>
+                <select id="speed-select">
+                    <option value="slow">慢</option>
+                    <option value="normal" selected>中</option>
+                    <option value="fast">快</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <p>使用滑鼠或左右方向鍵移動擋板</p>
+            <p>按 P 鍵暫停遊戲</p>
+        </div>
+    </div>
+    
+    <script src="breakout-game.js"></script>
+</body>
+</html>

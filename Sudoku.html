@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>數獨遊戲</title>
+    <link rel="stylesheet" href="sudoku-style.css">
+    <link rel="stylesheet" href="common-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="nav-bar">
+        <div class="home-link">
+            <a href="index.html">
+                <i class="fas fa-home"></i> 回到遊戲首頁
+            </a>
+        </div>
+    </div>
+    
+    <div class="container">
+        <h1>數獨遊戲</h1>
+        <div class="game-area">
+            <div class="game-info">
+                <div class="difficulty-container">
+                    <label for="difficulty">難度：</label>
+                    <select id="difficulty">
+                        <option value="easy">簡單</option>
+                        <option value="medium" selected>中等</option>
+                        <option value="hard">困難</option>
+                        <option value="expert">專家</option>
+                    </select>
+                </div>
+                
+                <div class="timer-container">
+                    <div class="timer-label">時間</div>
+                    <div id="timer">00:00</div>
+                </div>
+                
+                <div class="controls">
+                    <button id="new-game-btn">新遊戲</button>
+                    <button id="check-btn">檢查</button>
+                    <button id="hint-btn">提示</button>
+                    <button id="solve-btn">解答</button>
+                </div>
+                
+                <div class="status-message" id="status-message"></div>
+            </div>
+            
+            <div class="game-board-container">
+                <div id="sudoku-board" class="sudoku-board"></div>
+                
+                <div class="number-pad">
+                    <button class="number-btn" data-number="1">1</button>
+                    <button class="number-btn" data-number="2">2</button>
+                    <button class="number-btn" data-number="3">3</button>
+                    <button class="number-btn" data-number="4">4</button>
+                    <button class="number-btn" data-number="5">5</button>
+                    <button class="number-btn" data-number="6">6</button>
+                    <button class="number-btn" data-number="7">7</button>
+                    <button class="number-btn" data-number="8">8</button>
+                    <button class="number-btn" data-number="9">9</button>
+                    <button class="number-btn" data-number="0">清除</button>
+                    <button class="number-btn" data-number="notes">筆記</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal" id="game-complete-modal">
+            <div class="modal-content">
+                <h2>恭喜！</h2>
+                <p>你成功完成了數獨！</p>
+                <p>用時：<span id="completion-time">00:00</span></p>
+                <button id="play-again-btn">再玩一次</button>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <h3>遊戲規則：</h3>
+            <p>在每一行、每一列和每個 3x3 宮格中填入 1-9 的數字，使每個數字在每行、每列和每個宮格中只出現一次。</p>
+            <h3>操作說明：</h3>
+            <ul>
+                <li>點擊格子選中，然後點擊數字或按鍵盤數字鍵輸入</li>
+                <li>點擊「筆記」按鈕切換筆記模式</li>
+                <li>點擊「提示」獲取一個正確的數字</li>
+                <li>點擊「檢查」檢查當前填寫是否正確</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script src="sudoku-game.js"></script>
+</body>
+</html>
